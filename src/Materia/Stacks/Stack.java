@@ -7,6 +7,8 @@ import Materia.Models.Node;
 public class Stack {
 
     private Node top;
+    private int size;
+
 
     //Creamos la pila con la cima nula o vacia
     public Stack(){
@@ -17,6 +19,7 @@ public class Stack {
         Node newNode = new Node(value);
         newNode.setNext(top);
         top = newNode;
+        size++;
     }
 
     public int pop(){
@@ -25,6 +28,7 @@ public class Stack {
         }
         int value = top.getValue();
         top = top.getNext();
+        size--;
         return value;
     }
     
@@ -32,4 +36,35 @@ public class Stack {
         return top == null;
     }
 
+    public int peek(){
+        if(isEmpty()){
+            throw new EmptyStackException();
+        }
+        return top.getValue();
+    }
+
+    public void printStack(){
+        Node current = top;
+        while(current != null){
+            System.out.println(current.getValue());
+            current = current.getNext();
+        }
+    }
+
+    // Retorna el tamnio de la pila
+    // Complejidad )(n)
+
+    public int getSize(){
+        int cont = 0;
+        Node current = top;
+        while(current != null){
+            cont++;
+            current = current.getNext();
+        }
+        return cont;
+    }
+
+    public int getSize2(){
+        return size;
+    }
 }
