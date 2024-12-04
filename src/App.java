@@ -20,6 +20,9 @@ public class App {
         int cont = stack.getSize();
         System.out.println("Tamanio: " + cont);
 
+        System.out.println(stack.getSize2());
+
+
         //Mostrar valores
         System.out.println("Cima    ->" + stack.peek());
         System.out.println("Retirar ->" + stack.pop());

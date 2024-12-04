@@ -13,6 +13,7 @@ public class Stack {
     //Creamos la pila con la cima nula o vacia
     public Stack(){
         this.top = null;
+        this.size = 0;
     }
 
     public void push(int value){
