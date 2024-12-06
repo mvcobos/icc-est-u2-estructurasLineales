@@ -4,7 +4,7 @@ import Models.Pantalla;
 public class App {
 
     public static void main(String[] args) throws Exception {
-        //runStack();
+        runStack();
         runStackGeneric();
 
     }
@@ -46,6 +46,8 @@ public class App {
 
         System.out.println("Pantallas = " + router.getSize());
         System.out.println("Estoy en " + router.peek().getRuta());
+
+        router.printStack();
 
 
     }
