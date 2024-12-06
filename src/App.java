@@ -1,8 +1,11 @@
-import Materia.Stacks.Stack;
+import Materia.Stacks.*;
+import Models.Pantalla;
+
 public class App {
 
     public static void main(String[] args) throws Exception {
-        runStack();
+        //runStack();
+        runStackGeneric();
 
     }
 
@@ -17,10 +20,8 @@ public class App {
         stack.push(20);
 
         stack.printStack();
-        int cont = stack.getSize();
-        System.out.println("Tamanio: " + cont);
-
-        System.out.println(stack.getSize2());
+        System.out.println("Tamanio: " + stack.getSize());
+        System.out.println("Tamanio: " + stack.getSize2());
 
 
         //Mostrar valores
@@ -29,5 +30,23 @@ public class App {
         System.out.println("Cima    ->" + stack.peek());
         System.out.println("Retirar ->" + stack.pop());
         System.out.println("Cima    ->" + stack.peek());
+    }
+
+    public static void runStackGeneric(){
+        StackGeneric<Pantalla> router = new StackGeneric<>();
+        router.push(new Pantalla(1, "Home Page", "/home"));
+        router.push(new Pantalla(1, "Menu Page", "/home/menu"));
+        router.push(new Pantalla(1, "Users Page", "/home/menu/users"));
+
+        System.out.println("Estoy en " + router.peek().getRuta());
+        System.out.println("Regreso a " + router.popNode().getNext().getValue().getRuta());
+        System.out.println("Estoy en " + router.peek().getRuta());
+        
+        router.push(new Pantalla(1, "Settings Page", "/home/menu/settings"));
+
+        System.out.println("Pantallas = " + router.getSize());
+        System.out.println("Estoy en " + router.peek().getRuta());
+
+
     }
 }
