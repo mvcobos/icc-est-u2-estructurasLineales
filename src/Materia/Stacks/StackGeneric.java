@@ -39,11 +39,10 @@ public class StackGeneric<T> {
         if(isEmpty()){ //Si la pila esta vacia
             throw new EmptyStackException(); //Lanza una excepcion 
         }
-//        T value = top.getValue(); 
-        T hi = top.getNext().getValue();//El nodo top sera el siguiente
+        T value = top.getValue(); 
         top = top.getNext();
         size--; //Decrementa el tamanio
-        return hi;
+        return value;
     }
 
 
@@ -65,7 +64,6 @@ public class StackGeneric<T> {
             current = current.getNext();
         }
     }
-
 
     public NodeGeneric<T> getTop() {
         return top;

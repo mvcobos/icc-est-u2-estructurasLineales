@@ -30,9 +30,12 @@ public class Node {
         this.next = next;
     }
 
+
+
     @Override
-    public String toString(){
-        return "Value:" + value + " | Node:" + next;
+    public String toString() {
+        return "Node [value=" + value + "]";
     }
+
 
 }
