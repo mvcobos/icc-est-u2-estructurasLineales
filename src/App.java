@@ -83,11 +83,6 @@ public class App {
         System.out.println("COLA ACTUAL:");
         colaGeneric.printQueueGeneric();
         
-        /*
-         *         System.out.println("Estoy en " + router.peek().getRuta());
-        System.out.println("Regreso a " + router.popNode().getNext().getValue().getRuta());
-        System.out.println("Estoy en " + router.peek().getRuta());
-         */
 
     }
 }
