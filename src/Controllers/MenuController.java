@@ -1,13 +1,12 @@
 package Controllers;
 
-import Models.Contact;
+import Models.*;
 import Views.ConsoleView;
 
 public class MenuController {
 
     private ContactManager contactManager;
     private ConsoleView consoleView;
-
     
     
     public MenuController(ContactManager contactManager, ConsoleView consoleView) {
@@ -61,7 +60,7 @@ public class MenuController {
     }
 
     private void printList(){
-
+        contactManager.printM();
     }
 
     public ContactManager getContactManager() {

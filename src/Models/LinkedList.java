@@ -8,7 +8,16 @@ public class LinkedList <T> {
     private int size = 0;
 
     public void appendToTail(T value){
-
+        if(head == null){
+            head = new NodeGeneric<>(value);
+        } else{
+            NodeGeneric<T> current = head;
+            while(current.getNext() != null){
+                current = current.getNext();
+            }
+            current.setNext(new NodeGeneric<>(value));
+        }
+        size++;
     }
 
     public void findByValue(T value){
@@ -29,7 +38,7 @@ public class LinkedList <T> {
             System.out.println(current.getValue() + " -> ");
             current = current.getNext();
         }
-        System.out.println("END");
+        System.out.println(current.getValue() + " ->END");
     }
 
     public NodeGeneric<T> getHead() {

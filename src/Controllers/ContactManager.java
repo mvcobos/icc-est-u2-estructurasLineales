@@ -12,6 +12,9 @@ public class ContactManager {
         contacts.appendToTail(contact);
     }
 
+    public void printM(){
+        contacts.print();
+    }
 
     
 }

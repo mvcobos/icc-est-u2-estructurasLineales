@@ -1,3 +1,4 @@
+import Controllers.MenuController;
 import Materia.Queues.*;
 import Materia.Stacks.*;
 import Models.Pantalla;
@@ -5,10 +6,11 @@ import Models.Pantalla;
 public class App {
 
     public static void main(String[] args) throws Exception {
-        runStack();
+/*        runStack();
         runStackGeneric();
         runQueue();
-        runQueueGeneric();
+        runQueueGeneric();*/
+        menu();
     }
 
     public static void runStack(){
@@ -84,5 +86,10 @@ public class App {
         colaGeneric.printQueueGeneric();
         
 
+    }
+
+    public static void menu(){
+        MenuController menuController = new MenuController(null, null);
+        menuController.showMenu();
     }
 }
