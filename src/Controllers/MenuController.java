@@ -52,11 +52,20 @@ public class MenuController {
     }   
 
     private void findContact(){
+        String name = consoleView.getInput("Enter a name to search: ");
+        Contact<?, ?> contact = contactManager.findContactByName(name);
 
+        if (contact != null){
+            consoleView.showMessage("Contact found: " + contact);
+        } else {
+            consoleView.showMessage("Contact not found 404");
+        }
     }
 
     private void deleteContact(){
-
+        String name = consoleView.getInput("Enter a name to delete: ");
+        contactManager.deleteContactByName(name);
+        consoleView.showMessage("Contact deleted if existed");  
     }
 
     private void printList(){

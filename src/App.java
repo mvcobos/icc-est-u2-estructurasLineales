@@ -6,7 +6,7 @@ import Models.Pantalla;
 public class App {
 
     public static void main(String[] args) throws Exception {
-/*        runStack();
+/*      runStack();
         runStackGeneric();
         runQueue();
         runQueueGeneric();*/
@@ -92,4 +92,5 @@ public class App {
         MenuController menuController = new MenuController(null, null);
         menuController.showMenu();
     }
+
 }
