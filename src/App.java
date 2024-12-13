@@ -1,4 +1,7 @@
+import java.util.Scanner;
+
 import Controllers.MenuController;
+import Ejercicio_02_sorting.StackSorter;
 import Materia.Queues.*;
 import Materia.Stacks.*;
 import Models.Pantalla;
@@ -9,8 +12,9 @@ public class App {
 /*      runStack();
         runStackGeneric();
         runQueue();
-        runQueueGeneric();*/
-        menu();
+        runQueueGeneric();
+        menu();*/
+        stackSorter1();
     }
 
     public static void runStack(){
@@ -93,4 +97,20 @@ public class App {
         menuController.showMenu();
     }
 
+    public static void stackSorter1(){
+        StackGeneric<String> mainStack = new StackGeneric<>();
+        mainStack.push("a");
+        mainStack.push("u");
+        mainStack.push("i");
+        mainStack.push("p");
+        mainStack.push("o");
+        mainStack.push("e");
+
+        System.out.println("Stack original: ");
+        mainStack.printStack();
+        StackSorter<String> sorter = new StackSorter<>();
+        sorter.sortStack(mainStack);
+        System.out.println("Stack ordenado: ");
+        mainStack.printStack();
+    }
 }

@@ -83,6 +83,5 @@ public class StackGeneric<T> {
     public void setSize(int size) {
         this.size = size;
     }
-    
 
 }
