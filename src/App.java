@@ -1,7 +1,6 @@
-import java.util.Scanner;
-
 import Controllers.MenuController;
 import Ejercicio_02_sorting.StackSorter;
+import Ejercicio_01_sign.SignValidator;
 import Materia.Queues.*;
 import Materia.Stacks.*;
 import Models.Pantalla;
@@ -15,6 +14,7 @@ public class App {
         runQueueGeneric();
         menu();*/
         stackSorter1();
+        signValidator1();
     }
 
     public static void runStack(){
@@ -99,11 +99,11 @@ public class App {
 
     public static void stackSorter1(){
         StackGeneric<String> mainStack = new StackGeneric<>();
-        mainStack.push("a");
+        mainStack.push("1h0l4");
         mainStack.push("u");
-        mainStack.push("i");
-        mainStack.push("p");
-        mainStack.push("o");
+        mainStack.push("1");
+        mainStack.push("a");
+        mainStack.push("5");
         mainStack.push("e");
 
         System.out.println("Stack original: ");
@@ -112,5 +112,16 @@ public class App {
         sorter.sortStack(mainStack);
         System.out.println("Stack ordenado: ");
         mainStack.printStack();
+    }
+
+    public static void signValidator1(){
+        SignValidator sv = new SignValidator();
+        String input1 = "([]){}";
+        String input2 = "({)}";
+        String input3 = "(}{[]})";
+
+        System.out.println("Input: " + input1 + " -> Output: " + sv.isValid(input1)); // true
+        System.out.println("Input: " + input2 + " -> Output: " + sv.isValid(input2)); // false
+        System.out.println("Input: " + input3 + " -> Output: " + sv.isValid(input3)); // false
     }
 }
